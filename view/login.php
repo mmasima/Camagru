@@ -37,7 +37,11 @@ input{
                  <td align = "right"><strong>Password :</strong></td>
                  <td><input type="password" name="user_password" placeholder="enter your password" required ="required"></td>
             </tr>
-             <td align = "center" colspan = "8"><input type= "submit" name = "Login" value= "Login"></td>
+             <td align = "center" colspan = "8"><input type= "submit" name ="login" value= "Login!"></td>
+             <tr>
+                <td class="psw">Forgot <a href="forgot_password.php">password?</a></td>
+             </tr>
+             
         </table>
     </form>
     <center><h3>Not a User?<a href= "register.php">register here</a></h3></center>
