@@ -32,11 +32,11 @@ input{
             </tr>
             <tr>
                  <td align = "right"><strong>Email :</strong></td>
-                 <td><input type="text" name="user_email" placeholder="enter your email"></td>
+                 <td><input type="text" name="user_email" placeholder="enter your email" required></td>
             </tr>
             <tr>
                  <td align = "right"><strong>Password :</strong></td>
-                 <td><input type="password" name="user_password" placeholder="enter your password" ></td>
+                 <td><input type="password" name="user_password" placeholder="enter your password" required></td>
             </tr>
              <td align = "center" colspan = "8"><input type= "submit" name ="login-btn" value= "Login!"></td>
              <tr>

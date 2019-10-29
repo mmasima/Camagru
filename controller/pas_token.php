@@ -14,8 +14,10 @@ if(isset($_GET['token']) && isset($_POST['new_pas']))
         
         $result = mysqli_query($con, $sql);
         
-        echo "password change close nd try to log in";
-        header('location: login.php');
+        echo "<script type='text/javascript'>
+        alert('password change successful, redirecting to login!');
+        location = 'login.php';
+      </script>";
     } 
     else {
         echo"<script>alert('passwords dont match or is less tha 8 characters!')</script>";;
