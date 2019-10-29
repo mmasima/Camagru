@@ -1,6 +1,6 @@
 <?php
     include '../controller/pas_token.php';
-?>
+?>  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +19,7 @@ input{
 }
 </style> 
 <body>
-    <form action="login.php" method = "post" >
+    <form method="post" >
         <table align = "center"  bgcolor="lightblue" width=400>
             <tr align = center>
                 <td colspan = "8">
@@ -29,13 +29,13 @@ input{
             </tr>
             <tr>
                 <td align = "right"><strong>new password :</strong></td>
-                <td><input type="text" name="new_password" placeholder="new password" required ="required"></td>
+                <td><input type="password" name="new_password" placeholder="new password" required></td>
             </tr>
             <tr>
                 <td align = "right"><strong>re-enter password :</strong></td>
-                <td><input type="text" name="retype_password" placeholder="re-enter password" required ="required"></td>
+                <td><input type="password" name="retype_password" placeholder="re-enter password" required></td>
             </tr>
-                <td align = "center" colspan = "8"><input type= "submit" name = "new_pas" value= "submit!"></td>
+                <td align = "center" colspan = "8"><input type= "submit" name="new_pas" value= "submit!"></td>
         </table>
     </form>
 </body>

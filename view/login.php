@@ -21,6 +21,7 @@ input{
 }
 </style> 
 <body>
+<div><?php include 'eroor.php'; ?></div>
     <form action="login.php" method = "post" >
         <table align = "center"  bgcolor="lightblue" width=400>
             <tr align = center>
@@ -31,13 +32,13 @@ input{
             </tr>
             <tr>
                  <td align = "right"><strong>Email :</strong></td>
-                 <td><input type="text" name="user_email" placeholder="enter your email" required ="required"></td>
+                 <td><input type="text" name="user_email" placeholder="enter your email"></td>
             </tr>
             <tr>
                  <td align = "right"><strong>Password :</strong></td>
-                 <td><input type="password" name="user_password" placeholder="enter your password" required ="required"></td>
+                 <td><input type="password" name="user_password" placeholder="enter your password" ></td>
             </tr>
-             <td align = "center" colspan = "8"><input type= "submit" name ="login" value= "Login!"></td>
+             <td align = "center" colspan = "8"><input type= "submit" name ="login-btn" value= "Login!"></td>
              <tr>
                 <td class="psw">Forgot <a href="forgot_password.php">password?</a></td>
              </tr>
