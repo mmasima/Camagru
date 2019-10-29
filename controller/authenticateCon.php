@@ -5,7 +5,6 @@
    $con =mysqli_connect("localhost", "root", "Obakeng", "camagru");
     //login
    if(isset($_POST['login'])){
-    echo "<script>alert('password or email is not correct!, try again')</script>";
        $user_email = my_real_escape_string($con, $_POST['user_email']);
        $user_password = my_real_escape_string($con, $_POST['user_password']);
 
@@ -55,12 +54,6 @@ if(isset($_POST['register']))
     $user_password = password_hash($user_password, PASSWORD_DEFAULT);
     $token = bin2hex(random_bytes(10));
     
-
-    if ($user_password=='' OR $user_name=='' OR $user_email==''){
-        echo "<script>alert('Pease fill all the fields!')</script>";
-        exit();
-     }
-
     if (!filter_var($user_email,FILTER_VALIDATE_EMAIL)){
          echo "<script>alert('Your email is not valid!') </script>";
          exit();
@@ -112,9 +105,12 @@ if(isset($_POST['change_pas']))
     }
     else
     {
+        $token = bin2hex(random_bytes(10));
+        $sql = "INSERT INTO password_reset(token) VALUES ('$token')";
+		
         //send mail
-        $token = user['token'];
-        $message = "Hi there, click on this <a href=\"http://localhost:8080/Camagru/view/change_password.php =" . $token . "\">link</a> to change password";
+        echo "<script>alert('Check your email to change password!')</script>";
+        $message = "Hi there, click on this <a href=\"http://localhost:8080/Camagru/view/change_password.php?token=" . $token . "\">link</a> to change password";
         mail($user_email, "change your password", $message, "From :info@camagru.com");
     }
 }

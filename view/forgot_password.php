@@ -1,5 +1,5 @@
 <?php
-    include '../controller/authenticate.php';
+    include '../controller/authenticateCon.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +31,7 @@ input{
                 <td align = "right"><strong>Email :</strong></td>
                 <td><input type="text" name="user_email" placeholder="enter your email" required ="required"></td>
             </tr>
-                <td align = "center" colspan = "8"><input type= "submit" name = "change_pas" value= "submit"></td>
+                <td align = "center" colspan = "8"><input type= "submit" name="change_pas" value= "submit"></td>
         </table>
     </form>
 </body>
