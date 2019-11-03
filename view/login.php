@@ -21,7 +21,6 @@ input{
 }
 </style> 
 <body>
-<div><?php include 'eroor.php'; ?></div>
     <form action="login.php" method = "post" >
         <table align = "center"  bgcolor="lightblue" width=400>
             <tr align = center>
