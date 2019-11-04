@@ -44,7 +44,6 @@ catch(PDOException $e)
             $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $sql = "CREATE TABLE `images` (
                 `ID` int(11) NOT NULL AUTO_INCREMENT,
-                `user_name` VARCHAR(100) NOT NULL,
                 `image` VARCHAR(100) NOT NULL,
                 `PersonID` int,
                 FOREIGN KEY(PersonID) REFERENCES users(PersonID),

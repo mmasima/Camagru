@@ -15,16 +15,17 @@
             if ($_SESSION['verified'] === 0)
             {
                 echo "<script>alert('verify account first')</script>";
+                return ;
             }
             $user = mysqli_fetch_assoc($run);
 
             if(password_verify($user_password, $user['user_password']))
             {
-                    $_SESSION['PersonID'] = $user['PersonID'];
-                    $_SESSION['user_name'] = $user['user_name'];
-                    $_SESSION['user_email'] = $user['user_email'];
-                    $_SESSION['verified'] = $user['verified'];
-                    header('location: ../index.php');
+                $_SESSION['PersonID'] = $user['PersonID'];
+                $_SESSION['user_name'] = $user['user_name'];
+                $_SESSION['user_email'] = $user['user_email'];
+                $_SESSION['verified'] = $user['verified'];
+                header('location: ../index.php');
             }
             else
                 echo "<script>alert('password is incorrect!, try again')</script>";
@@ -72,7 +73,7 @@
                 
                     mail($user_email, "Verify your email", $message, "From :info@camagru.com");
                         
-                    $insert = "insert into users(user_name, user_email, user_password, token)
+                    $insert = "INSERT INTO users(user_name, user_email, user_password, token)
                                 values ('$user_name', '$user_email', '$user_password', '$token')"; 
                     $run_insert= mysqli_query($con, $insert);
                     if ($run_insert){
