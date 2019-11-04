@@ -1,5 +1,7 @@
 <?php
+
 session_start();
+
 $conn = new mysqli('localhost', 'root', 'Obakeng', 'camagru');
 if (isset($_GET['token'])) {
     $token = $_GET['token'];

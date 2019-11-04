@@ -1,5 +1,5 @@
 <?php
-    include '../controller/upoad_images';  
+    include '../controller/upload_images.php';  
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,10 +10,10 @@
     <title>images</title>
 </head>
 <body>
-<form action="" method="post" enctype="multipart/form-data">
+<form actionmethod="post" enctype="multipart/form-data">
     Select image to upload:
     <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="upload">
+    <input type="submit" value="Upload Image" name="submit">
 </form>
 </body>
 </html>
