@@ -1,5 +1,5 @@
 <?php
-    include '../controller/authenticateCon.php';
+    include '../controller/login.php';
 ?>
 
 <!DOCTYPE html>

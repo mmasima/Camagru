@@ -1,11 +1,11 @@
 <?php
-
     session_start();
-    if (!isset($_SESSION["PersonID"])) {
-        //echo "<script>alert('You need to log in first')</script>";
-        header('location: ./login.php');
-        return;
-    }
+
+    // if (!isset($_SESSION["PersonID"])) {
+    //     echo "<script>alert('You need to log in first')</script>";
+    //     header('location: ./login.php');
+    //     return;
+    // }
 
     $userId = $_SESSION['PersonID'];
 
@@ -25,17 +25,5 @@
     <input type="file" name="img" id="">
     <input type="submit" value="Upload Image" name="submit">
 </form>
-<?php
-    $imgUrls = [
-        "2b8ba2a9d0.jpg",
-        "5f5510d53a.jpg",
-        "a14349e605.jpg"
-    ];
-
-    for ($i=0; $i < sizeof($imgUrls); $i++) { 
-        echo "<img src=\"../uploads/{$imgUrls[$i]}\" />";
-    }
-
-?>
 </body>
 </html>
