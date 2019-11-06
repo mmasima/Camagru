@@ -1,5 +1,5 @@
 <?php
-    include '../controller/authenticateCon.php';
+    include '../controller/forget_password.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +19,7 @@ input{
 }
 </style> 
 <body>
-    <form action="login.php" method = "post" >
+    <form action="" method = "post" >
         <table align = "center"  bgcolor="lightblue" width=400>
             <tr align = center>
                 <td colspan = "8">
