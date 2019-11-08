@@ -1,8 +1,6 @@
 <?php
 require 'functions.php';
-
-$con = mysqli_connect("localhost", "root", "Obakeng", "camagru");
-
+require 'connection.php';
 
 if(isset($_POST["submit"])) 
 {

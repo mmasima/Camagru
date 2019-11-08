@@ -1,16 +1,12 @@
 <?php
 
-require '../config/db_con.php';
+require 'connection.php';
 session_start();
 
 
 //register
 if(isset($_POST['register']))
 {
-    try {
-        $conn = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
         $user_name =  $_POST['user_name'];
         $user_email = $_POST['user_email'];
         $user_password = $_POST['user_password'];
@@ -70,9 +66,4 @@ if(isset($_POST['register']))
         {
             echo "<script>alert('Passwords dont match!')</script>";
         }
-    }
-    catch(PDOException $e)
-    {
-    echo "Connection failed: " . $e->getMessage();
-    }
 }

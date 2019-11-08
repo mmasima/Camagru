@@ -30,8 +30,8 @@ input{
                 </td>
             </tr>
             <tr>
-                 <td align = "right"><strong>Name :</strong></td>
-                 <td><input type="text" name="user_name" placeholder="Enter your name" required ="required"></td>
+                 <td align = "right"><strong>User Name :</strong></td>
+                 <td><input type="text" name="user_name" placeholder="Enter your username" required ="required"></td>
             </tr>
             <tr>
                  <td align = "right"><strong>Email :</strong></td>

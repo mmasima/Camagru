@@ -1,13 +1,11 @@
 <?php
     session_start();
 
-    // if (!isset($_SESSION["PersonID"])) {
-    //     echo "<script>alert('You need to log in first')</script>";
-    //     header('location: ./login.php');
-    //     return;
-    // }
-
-    $userId = $_SESSION['PersonID'];
+     if (!isset($_SESSION["PersonID"])) {
+        echo "<script>alert('You need to log in first')</script>";
+        header('location: ./login.php');
+         return;
+     }
 
     include '../controller/upload_images.php'; 
 ?>

@@ -34,5 +34,6 @@ input{
                 <td align = "center" colspan = "8"><input type= "submit" name="change_pas" value= "submit"></td>
         </table>
     </form>
+    <center><h3>back to <a href= "login.php"> login</a></h3></center>
 </body>
 </html>

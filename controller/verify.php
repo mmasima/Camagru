@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require '../config/db_con.php';
+require 'connection.php';
 
 if (isset($_GET['token'])) {
     
@@ -13,7 +13,7 @@ if (isset($_GET['token'])) {
         $sql = "UPDATE users SET verified=1 WHERE token='$token'";
         $conn->exec($sql);
         echo "<script type='text/javascript'>
-                        alert('registration successful, check email to verify account!');
+                        alert('verification successful!');
                         location = '../view/login.php';
                       </script>";
     } catch (PDOException $e) {

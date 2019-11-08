@@ -31,7 +31,7 @@ input{
             </tr>
             <tr>
                  <td align = "right"><strong>Email :</strong></td>
-                 <td><input type="email" name="user_email" placeholder="enter your email" required></td>
+                 <td><input type="text" name="user_email" placeholder="enter your email" required></td>
             </tr>
             <tr>
                  <td align = "right"><strong>Password :</strong></td>
