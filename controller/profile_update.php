@@ -49,7 +49,7 @@ if(isset($_POST['email']))
         return ;
     }
 
-    echo $user_email = $_POST['user_email'];
+     $user_email = $_POST['user_email'];
 
     $sql = "UPDATE users set user_email='$user_email' WHERE PersonID = '$ID'";
 

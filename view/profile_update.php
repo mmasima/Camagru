@@ -16,25 +16,17 @@ if (!isset($_SESSION["PersonID"]))
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>update Profile</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<style>
-body{
-    padding: 0px;
-    margin: 0px;
-    background: skyblue;
-}
-input{
-    padding: 10px;
-}
-</style> 
 <body>
     <form method="post" enctype="multipart/form-data">
-        <table align = "center"  bgcolor="lightblue" width=400>
+        <table align = "center" width=400>
             <tr align = center>
                 <td colspan = "8">
                     <h2>Update Profile</h2>
@@ -61,5 +53,5 @@ input{
             </tr> 
         </table>
     </form>
-</body>
+    <center><h3><a href= "../index.php">main menu</a></h3></center>
 </html>

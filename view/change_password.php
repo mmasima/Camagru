@@ -8,19 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>change_password</title>
-<style>
-    body{
-    padding: 0px;
-    margin: 0px;
-    background: skyblue;
-}
-input{
-    padding: 10px;
-}
-</style> 
+    <link rel="stylesheet" href="styles.css">
+
 <body>
     <form method="post" >
-        <table align = "center"  bgcolor="lightblue" width=400>
+        <table align = "center" width=400>
             <tr align = center>
                 <td colspan = "8">
                 <h1>CAMAGRU</h1>

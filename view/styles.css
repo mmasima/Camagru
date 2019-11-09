@@ -1,0 +1,11 @@
+body{
+    background-image : url("background_image.jpg");
+    background-position: center center;
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+
+}
+input{
+    padding: 10px;
+}
