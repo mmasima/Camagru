@@ -19,7 +19,7 @@ if(isset($_GET['token']) && isset($_POST['new_pas']))
         }
     } 
     else {
-        echo"<script>alert('passwords dont match or is less tha 8 characters!')</script>";
+        echo"<script>alert('passwords dont match or is less than 8 characters!')</script>";
     }
 }
  

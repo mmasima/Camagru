@@ -19,7 +19,6 @@ if(isset($_POST['register']))
         } 
         else if ($user_password === $cuser_password) 
         {
-            echo "hello"; 
             $user_password = password_hash($user_password, PASSWORD_DEFAULT);
             $token = bin2hex(random_bytes(10));
 
@@ -28,9 +27,9 @@ if(isset($_POST['register']))
             }
             else 
             {
-                echo "hello"; 
+                 
                 $select = $conn->prepare("SELECT  * FROM users WHERE user_email = ?");
-                echo "hello";
+                
                 $array = array($user_email);
                 $select->execute($array);
                 $res = $select->fetch();
@@ -58,7 +57,6 @@ if(isset($_POST['register']))
                         alert('registration successful, check email to verify account!');
                         location = 'login.php';
                     </script>";
-                
                     }
                 }
             }

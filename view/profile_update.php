@@ -2,7 +2,7 @@
 session_start();
 
 include '../controller/profile_update.php';
-
+;
 if (!isset($_SESSION["PersonID"])) 
 {
     echo "<script type='text/javascript'>
