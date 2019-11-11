@@ -14,10 +14,14 @@ if(isset($_POST['login-btn']))
     $array = array($user_email);
     $select->execute($array);
     $res = $select->fetch();
+    
 
     if(!empty($res))
-    {
-        $_SESSION['PersonID'] = $res['PersonID'];     
+    {     
+        $_SESSION["PersonID"] = $res["PersonID"];
+        $_SESSION["user_name"] = $res["user_name"];
+        $_SESSION["user_email"] = $res["user_email"];
+        $_SESSION["verified"] = $res["verified"];
         // First Database query check if user is verified else echo alert
         if ($res['verified'] == 0)
         {
@@ -28,7 +32,7 @@ if(isset($_POST['login-btn']))
         {
             if(password_verify($user_password, $res['user_password']))
             {
-                header('location: ../view/images.php');
+                header('location: ../index.php');
             }
             else
             {

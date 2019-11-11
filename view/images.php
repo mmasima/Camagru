@@ -1,4 +1,5 @@
 <?php
+session_start();
     if (!isset($_SESSION["PersonID"])) 
     {
         echo "<script type='text/javascript'>
@@ -25,5 +26,6 @@
     <input type="file" name="img" id="">
     <input type="submit" value="Upload Image" name="submit">
 </form>
+<center><h3><a href= "../index.php">main menu</a></h3></center>
 </body>
 </html>

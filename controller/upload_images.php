@@ -10,7 +10,7 @@ if(isset($_POST["submit"]))
             echo "you need to insert a image";
         }
         else {
-            $allowed = ['png', 'jpeg', 'jpg'];
+            $allowed = ['png', 'jpeg', 'jpg','gif'];
             $fl_name = $_FILES['img']['name'];
             $fl_extn = strtolower(end(explode('.', $fl_name)));
             $fl_temp = $_FILES['img']['tmp_name'];

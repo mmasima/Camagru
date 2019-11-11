@@ -10,8 +10,8 @@ if(isset($_GET['token']) && isset($_POST['new_pas']))
         $password = password_hash($_POST['new_password'], PASSWORD_DEFAULT);
         $token = $_GET['token'];
         $sql = "UPDATE users set user_password='$password' WHERE token='$token' LIMIT 1";
-        
-        if ($conn->exec($sql)){
+        $result = $conn->prepare($sql); 
+        if ($result->execute()){
             echo "<script type='text/javascript'>
             alert('password change successful, redirecting to login!');
             location = 'login.php';

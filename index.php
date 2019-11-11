@@ -10,10 +10,10 @@
 
 * {
     margin: 0;
-    padding : 0;
+    padding : 2px 1px 2px ;
 }
 .wrapper{
-    width: 1170px;
+    width: 100%;
     margin: auto;
 }
 header{
@@ -49,29 +49,21 @@ header{
     height: auto;
 }
 .Welcome-text{
-    position: absolute;
-    width: 600px;
-    height: 300px;
-    margin: 20% 30%;
+    margin: 20% 5%;
+    width: 100%;
     text-align: center;
 }
 .Welcome-text h1{
     text-align: center;
     color: #fff;
     text-orientation: uppercase;
-    font-size: 60px;
+    font-size: 50px;
+    width: 100%;
 }
-.Welcome-text a{
-    border: 1px solid #fff;
-    padding: 10px  25px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 14px;
-    margin-top: 20px;
-    display: inline-block;
-    color: #fff;
+
 }
 .Welcome-text a:hover{
+    width:100%;
     background: #fff;
     color :#333;
 }
@@ -84,16 +76,15 @@ header{
             </div>
             <ul class="nav-area">
                 <li><a href="./view/profile_update.php">update profile</a></li>
-                <li><a href="./view/images.php">upload image</a></li>
+                <li><a href="./view/images.php">images</a></li>
                 <li><a href="#">Camera</a></li>
-                <li><a href="#">about</a></li>
+                <li><a href="./view/gallery.php">gallery</a></li>
                 <li><a href="./controller/logout.php">logout</a></li>
             </ul>
         </div>
     
     <div class ="Welcome-text">
-        <h1>Camagru</h1>
-        <a href="#"> Contact us</a>  
+        <h1>Camagru</h1> 
     </div>
 </body>
 </html>

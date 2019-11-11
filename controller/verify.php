@@ -11,7 +11,8 @@ if (isset($_GET['token'])) {
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         //setting verified to one 
         $sql = "UPDATE users SET verified=1 WHERE token='$token'";
-        $conn->exec($sql);
+        $result = $conn->prepare($sql); 
+        $result->execute();
         echo "<script type='text/javascript'>
                         alert('verification successful!');
                         location = '../view/login.php';

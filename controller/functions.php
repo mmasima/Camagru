@@ -8,17 +8,18 @@ function img($fl_extn, $fl_tmp)
     
         $conn = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $file_path = substr(md5(time()), 0, 10) . '.' . $fl_extn;
-        move_uploaded_file($fl_tmp, '../uploads' . $file_path);
+        $file_path = '../controller/uploads/' . substr(md5(time()), 0, 10) . '.' . $fl_extn;
+        move_uploaded_file($fl_tmp, $file_path);
         
         $PersonID = $_SESSION['PersonID'];
 
         $insert = "INSERT INTO images (image, PersonID) values('$file_path', '$PersonID')";
-        if($conn->exec($insert)){
+        $result = $conn->prepare($insert); 
+        if($result->execute()){
             echo "OK";        
         }
         else {
-            die(mysqli_error($conn));
+            echo "Connection failed";
         }
     }
     catch(PDOException $e)

@@ -5,7 +5,7 @@ require 'connection.php';
 
 $ID = $_SESSION['PersonID'];
 
-$user_email = $_SEESION['user_email'];
+$user_email = $_SESSION['user_email'];
 
 if(isset($_POST['username']))
 {
@@ -18,8 +18,8 @@ if(isset($_POST['username']))
     $user_name = $_POST['user_name'];
 
     $sql = "UPDATE users set user_name = '$user_name' WHERE PersonID = '$ID'";
-
-    if (($conn->exec($sql)))
+    $result = $conn->prepare($sql); 
+    if ($result->execute())
     {
         $message = "Hi there, Some information on your Camagru profile has been changed!";
 
@@ -77,7 +77,8 @@ if (isset($_POST['password']))
         $user_password = password_hash($_POST['user_password'],PASSWORD_DEFAULT); 
         $sql = "UPDATE users set user_password ='$user_password' WHERE PersonID = '$ID'";
 
-        if($conn->exec($sql))
+        $result = $conn->prepare($sql); 
+        if($result->execute())
         {
          $message = "Hi there, Some information on your Camagru profile has been changed!";
             
