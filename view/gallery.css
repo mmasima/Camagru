@@ -1,0 +1,43 @@
+body{
+    background-image : url("background_image.jpg");
+    background-position: center center;
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    ;
+
+}
+input{
+    padding: 10px;
+}
+h1{
+  text-align: center;
+}
+.gallery{
+  display: inline-block;
+  width : 400px;
+  height : 200px;
+}
+.images{
+  text-align: center;
+}
+.pager{
+  text-align: center;
+  font-size: 200%;
+}
+textarea{
+  width: 400px;
+  height: 80px;
+  background-color: #fff;
+  resize: none;
+}
+button{
+  width: 100px;
+  height: 30px;
+  background-color: rgb(37, 154, 184);
+  border : none;
+  color : #fff;
+  font-family: arial;
+  cursor: pointer;
+}

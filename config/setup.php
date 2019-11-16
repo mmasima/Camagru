@@ -56,4 +56,42 @@ catch(PDOException $e)
         } catch (PDOException $e) {
             echo "ERROR CREATING IMAGES TABLE: ".$e->getMessage()."Aborting process<br>";
         }
+        try {
+        
+            $dbh = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+            $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $sql = "CREATE TABLE `comments` (
+                `comment_id` int(11) NOT NULL AUTO_INCREMENT,
+                `comment` varchar(200) NOT NULL,
+                `image_id` int,
+                `PersonID` int,
+
+                FOREIGN KEY(PersonID) REFERENCES users(PersonID),
+                FOREIGN KEY(image_id) REFERENCES images(ID),
+
+                PRIMARY KEY(`comment_id`)
+              )";
+            $dbh->exec($sql);
+            echo "Table COMMENTS created successfully<br>";
+        } catch (PDOException $e) {
+            echo "ERROR CREATING COMMENTS TABLE: ".$e->getMessage()."Aborting process<br>";
+        }
+        try {
+        
+        $dbh = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+    
+        $sql = "CREATE TABLE `likes`(
+			`like_id` INT(11) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+			`PersonID` INT,
+			`image_id` INT,
+            
+			FOREIGN KEY(`image_id`) REFERENCES `images`(`ID`),
+    		FOREIGN KEY(`PersonID`) REFERENCES `users`(`PersonID`)
+        )";
+         $dbh->exec($sql);
+         echo "Table COMMENTS created successfully<br>";
+        }catch (PDOException $e) {
+            echo "ERROR CREATING COMMENTS TABLE: ".$e->getMessage()."Aborting process<br>";
+        }
 ?>

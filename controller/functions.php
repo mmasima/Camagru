@@ -12,8 +12,9 @@ function img($fl_extn, $fl_tmp)
         move_uploaded_file($fl_tmp, $file_path);
         
         $PersonID = $_SESSION['PersonID'];
+        
 
-        $insert = "INSERT INTO images (image, PersonID) values('$file_path', '$PersonID')";
+        $insert = "INSERT INTO images (image, PersonID) values('$file_path', '$PersonID') ";
         $result = $conn->prepare($insert); 
         if($result->execute()){
             echo "OK";        

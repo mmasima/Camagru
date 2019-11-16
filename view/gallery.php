@@ -1,6 +1,7 @@
 <?php
 
     include '../controller/connection.php';
+    include 'comment_inc.php';
 ?>
 
 <!DOCTYPE html>
@@ -9,16 +10,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styles.css">
     <title>Gallery</title>
+    <link rel="stylesheet" href="gallery.css">
 </head>
-<style>
-.gallery{
-    width : 300px;
-    height : 400px; 
-}
-</style>
 <body>
+    <h1>Gallery</h1>
 <?php
     $results_per_page = 5;
 
@@ -40,30 +36,48 @@
     $this_page_first_result = ($page -1) * $results_per_page;
 
     $sql = "SELECT * FROM images LIMIT " .$this_page_first_result . ',' . $results_per_page ;
-    $result = $conn->prepare($sql); 
+    $result = $conn->prepare($sql);
     $result->execute();
 
     $i = 0;
     while($row = $result->fetch())
     {
         
-        if ($i % 3 == 0)
-        {
-            echo "<tr>";
-        }
-        echo "<td><img src ='{$row['image']}' class = 'gallery'></td>";
-        if ($i % 3 == 2)
-        {
-            echo "</tr>";
-        }
-        $i++;
+            echo "<form method = 'POST' action = '".SetComments($conn)."'>";
+                echo "<div class = 'images'>";
+                    echo "<td><img src ='{$row['image']}' class = 'gallery' value = '{$row['ID']}'></td>";
+                    echo "<input type = 'hidden' name = 'uid' value = 'Anonymous'>";
+                    echo "<input type = 'hidden' name = 'image_id' value = '{$row['ID']}'>";
+                    echo "<br>";
+                    echo "<td value = '{$row['ID']}'><textarea name='comment_content'></textarea></td>";
+                    echo "<br>";
+                    echo "<button type : 'submit' name = 'commentSubmit' value = '{$row['ID']}'>comment</button>";
+                    echo " ";
+                    echo " ";                   
+                    echo "<button type : 'submit' name = 'like' value = '{$row['ID']}'>like</button>";
+                    if (isset($_POST['like'])) 
+                    {
+                        break;
+                    }  
+                    echo "<br>";
+                    if (isset($_POST['commentSubmit'])) 
+                    {
+                        break;
+                    }  
+                echo"</div>";
+            echo "</form>";
+        echo "</tr>";
+    
     }
+    echo"<div class = 'pager'>";
     for ($page = 1; $page <= $number_of_pages; $page++)
     {
-        echo '<a href = "gallery.php?page=' .$page .'">' .$page. '</a>'; 
+            echo '<td><a href = "gallery.php?page=' .$page .'">' .$page. '</a></td>';
+            
     }
-
+    echo"</div>";
 ?>
-    <center><h3><a href= "../index.php">main menu</a></h3></center>
+</div>
+<center><h3><a href= "../index.php">main menu</a></h3></center>
 </body>
 </html>

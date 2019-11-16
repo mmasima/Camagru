@@ -37,6 +37,7 @@ if(isset($_POST['login-btn']))
             else
             {
                 echo "<script>alert('password is incorrect!, try again')</script>";
+                return ;
             }
         }   
     }
