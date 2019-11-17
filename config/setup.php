@@ -28,6 +28,7 @@ catch(PDOException $e)
             `user_password` varchar(255) NOT NULL,
             `verified` tinyint(1) DEFAULT '0',
             `token` varchar(255) DEFAULT NULL,
+            `notify` tinyint(1) DEFAULT '1',
            
             PRIMARY KEY (`PersonID`)
         )";
@@ -90,8 +91,8 @@ catch(PDOException $e)
     		FOREIGN KEY(`PersonID`) REFERENCES `users`(`PersonID`)
         )";
          $dbh->exec($sql);
-         echo "Table COMMENTS created successfully<br>";
+         echo "Table likes created successfully<br>";
         }catch (PDOException $e) {
-            echo "ERROR CREATING COMMENTS TABLE: ".$e->getMessage()."Aborting process<br>";
+            echo "ERROR CREATING likes TABLE: ".$e->getMessage()."Aborting process<br>";
         }
 ?>

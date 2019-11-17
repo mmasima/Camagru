@@ -41,3 +41,11 @@ button{
   font-family: arial;
   cursor: pointer;
 }
+
+.container_box{
+	display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    margin-bottom: 10px;
+    padding: 20px;
+}

@@ -1,6 +1,8 @@
 <?php
 
 require 'connection.php';
+include 'webroot.php';
+
 session_start();
 
 
@@ -45,7 +47,7 @@ if(isset($_POST['register']))
                     $_SESSION['verified'] = 0;
                     //send mail 
                 
-                    $message = $msg = "Hi there, click on this <a href=\"http://127.0.0.1:8080/Camagru/controller/verify.php?token=" . $token . "\">link</a> to verify";
+                    $message = $msg = "Hi there, click on this <a href=\"http://127.0.0.1:8080/".WEBROOT."/controller/verify.php?token=" . $token . "\">link</a> to verify";
                 
                     mail($user_email, "Verify your email", $message, "From :info@camagru.com");
                     

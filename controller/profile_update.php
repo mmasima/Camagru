@@ -1,5 +1,6 @@
 <?php
 require 'connection.php';
+session_start();
 
 //user_name change
 
@@ -21,10 +22,6 @@ if(isset($_POST['username']))
     $result = $conn->prepare($sql); 
     if ($result->execute())
     {
-        $message = "Hi there, Some information on your Camagru profile has been changed!";
-
-        mail($user_email, "Profile details changed", $message, "From :info@camagru.com");
-
         echo"<script>alert('username changed!')</script>";
 
         return ;
@@ -55,10 +52,6 @@ if(isset($_POST['email']))
 
     if($conn->exec($sql))
    {
-    $message = "Hi there, Some information on your Camagru profile has been changed!";
-            
-    mail($user_email, "Profile details changed", $message, "From :info@camagru.com");
-
     echo"<script>alert('email changed!')</script>";
     return ;
    }
@@ -80,18 +73,35 @@ if (isset($_POST['password']))
         $result = $conn->prepare($sql); 
         if($result->execute())
         {
-         $message = "Hi there, Some information on your Camagru profile has been changed!";
-            
-         mail($user_email, "Profile details changed", $message, "From :info@camagru.com");
-
-        echo"<script>alert('password changed!')</script>";
-        return ;
+            echo"<script>alert('password changed!')</script>";
+            return ;
         }
     }
     else 
     {
         echo"<script>alert('passwords dont match or is less tha 8 characters!')</script>";
         return;
+    }
+}
+if(isset($_POST['notify_off']))
+{
+    $sql = "UPDATE users set notify =0 WHERE PersonID = '$ID'";         
+    $result = $conn->prepare($sql); 
+    if($result->execute())
+    {
+        echo"<script>alert('notifications are off!')</script>";
+        return ;
+    }
+}
+
+if(isset($_POST['notify_on']))
+{
+    $sql = "UPDATE users set notify =1 WHERE PersonID = '$ID'";         
+    $result = $conn->prepare($sql);
+    if($result->execute())
+    {
+        echo"<script>alert('notifications are on!')</script>";
+        return ;
     }
 }
 ?>

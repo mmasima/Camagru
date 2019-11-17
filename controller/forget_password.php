@@ -1,5 +1,6 @@
 <?php
    require 'connection.php';
+   include 'webroot.php';
  
 //forgot password
 if(isset($_POST['change_pas']))
@@ -20,7 +21,7 @@ if(isset($_POST['change_pas']))
         $token = $res['token'];
             
             //send mail
-            $message = "Hi there, click on this <a href=\"http://localhost:8080/Camagru/view/change_password.php?token=" . $token . "\">link</a> to change password";
+            $message = "Hi there, click on this <a href=\"http://localhost:8080/".WEBROOT."/view/change_password.php?token=" . $token . "\">link</a> to change password";
             mail($user_email, "change your password", $message, "From :info@camagru.com");
 
             echo"<script>alert('An email has been sent to you, you can close this page!')</script>";

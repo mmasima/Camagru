@@ -50,7 +50,14 @@ if (!isset($_SESSION["PersonID"]))
                  <td align = "right"><strong>Re Enter Pass :</strong></td>
                  <td><input type="password" name="cuser_password" placeholder="Confrim your password"></td>
                  <td align = "center" colspan = "8"><input type="submit" name="password" value="Change!"></td>
-            </tr> 
+            </tr>
+            <tr>
+            <td 
+                align = "center" colspan = "8"><input type="submit" name="notify_off" value="turn off email notification"></td>
+            </tr>
+            <tr> <td 
+                align = "center" colspan = "8"><input type="submit" name="notify_on" value="turn on email notification"></td>
+            </tr>
         </table>
     </form>
     <center><h3><a href= "../index.php">main menu</a></h3></center>
